@@ -32,6 +32,7 @@ public class clicker : MonoBehaviour
                 //test score code
                 testScore++;
                 scoreText.text = "Score " + testScore;
+                clicked.GetComponent<SpriteRenderer>().enabled = false;
             }
             else if(Input.GetKeyDown(KeyCode.Space))
             {
@@ -50,7 +51,6 @@ public class clicker : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         clicked = collision.gameObject;
-        print (collision);
     }
 
 }
