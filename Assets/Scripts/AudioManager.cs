@@ -12,11 +12,17 @@ public class AudioManager : MonoBehaviour
     //Audio thats being used will be inputed in to these
     public AudioClip menu;
     public AudioClip game;
+    public AudioClip game1;
+    public AudioClip game2;
     public AudioClip Button;
 
     public static AudioManager instance;
 
     bool musicPlaying;
+
+    public bool gameT = false;
+    public bool gameT1 = false;
+    public bool gameT2 = false;
 
     //This checks to see if there is multiple of the audio manager
     private void Awake()
@@ -53,14 +59,51 @@ public class AudioManager : MonoBehaviour
         }
 
         //This plays audio for the game
-        if (currentScene.name == "Game" && musicPlaying)
+        if (currentScene.name == "Gameplay development" && musicPlaying)
         {
 
-            musicSource.clip = game;
+            gameMusic();
+            Debug.Log("work");
             musicSource.Play();
             musicPlaying = false;
         }
 
+    }
+    public void gameMusic()
+    {
+        if (gameT == true)
+        {
+            musicSource.clip = game;
+            
+        }
+        else if (gameT1 == true)
+        {
+            musicSource.clip = game1;
+            
+        }
+        else if (gameT2 == true)
+        {
+            musicSource.clip = game2;
+            
+        }
+    }
+    public void Song()
+    {
+        gameT = true;
+        gameT1 = false;
+        gameT2 = false;
+    }
+    public void Song1()
+    {
+        gameT1 = true;
+        gameT2 = false;
+        gameT = false;
+    }
+    public void Song2()
+    {
+        gameT2 = true;
+        gameT1 = false;
+        gameT = false;
     }
 
     //This can be used to play the audio from outside the script
