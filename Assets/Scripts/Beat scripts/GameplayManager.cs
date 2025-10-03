@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -15,6 +16,14 @@ public class GameplayManager : MonoBehaviour
     public GameObject timerText;
     public GameObject Beatmap;
 
+    public int BeatsLeft;
+
+    public bool playMusic = false;
+
+    private void Start()
+    {
+        FindAllBeats();
+    }
     private void Update()
     {
         TimerCheck();
@@ -47,8 +56,21 @@ public class GameplayManager : MonoBehaviour
     {
         timerText.SetActive(false);
         Beatmap.SetActive(true);
+        playMusic = true;
         //begin music (Marks problem)
     }
+
+    //finds the total amount of beats so I can show the results when all beats have been hit
+    public void FindAllBeats()
+    {
+        GameObject[] beats = GameObject.FindGameObjectsWithTag("Clickable");
+        foreach (GameObject beat in beats)
+        {
+            BeatsLeft++;
+        }
+    }
+
+
 
     void SongComplete()
     {

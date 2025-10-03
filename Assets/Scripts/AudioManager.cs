@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
+    //gameplay stuff
+    GameplayManager gameplayManager;
+
 
     //Audio sources
     [SerializeField] AudioSource musicSource;
@@ -61,11 +64,21 @@ public class AudioManager : MonoBehaviour
         //This plays audio for the game
         if (currentScene.name == "Gameplay development" && musicPlaying)
         {
+            gameplayManager = GameObject.FindAnyObjectByType<GameplayManager>();
 
-            gameMusic();
-            Debug.Log("work");
-            musicSource.Play();
-            musicPlaying = false;
+            //checks against my gameplay manager script to see if the countdown is finished
+
+            if (gameplayManager != null)
+            {
+                if (gameplayManager.playMusic == true)
+                {
+                    gameMusic();
+                    Debug.Log("work");
+                    musicSource.Play();
+                    musicPlaying = false;
+                }
+            }
+
         }
 
     }

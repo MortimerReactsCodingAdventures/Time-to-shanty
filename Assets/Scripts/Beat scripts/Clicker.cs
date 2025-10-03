@@ -6,9 +6,9 @@ public class clicker : MonoBehaviour
 {
     public GameObject clicked;
     public BoxCollider2D myCollision;
-
     public int testScore;
     public TextMeshProUGUI scoreText;
+    public GameplayManager gameplayManager;
     //all things mentioning score will be moved to a global score manager
 
     void Start()
@@ -33,6 +33,8 @@ public class clicker : MonoBehaviour
                 testScore++;
                 scoreText.text = "Score " + testScore;
                 clicked.GetComponent<SpriteRenderer>().enabled = false;
+                clicked.GetComponent<BoxCollider2D>().enabled = false;
+                gameplayManager.BeatsLeft--;
             }
             else if(Input.GetKeyDown(KeyCode.Space))
             {
@@ -41,6 +43,13 @@ public class clicker : MonoBehaviour
                 scoreText.text = "Score " + testScore;
                 print("Miss");
             }
+
+            //if the tag of the collided object is "Hold" give points for holding down by checking for if the key is released after pressing down
+            //if you release early the entire note should disappear
+            //give bonus points at the end of a long note on release
+            Input.GetKeyUp(KeyCode.Space);
+
+
         }
     }
 
