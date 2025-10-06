@@ -9,7 +9,12 @@ public class clicker : MonoBehaviour
     public int testScore;
     public TextMeshProUGUI scoreText;
     public GameplayManager gameplayManager;
-    //all things mentioning score will be moved to a global score manager
+    public TextMeshProUGUI hitText;
+
+
+    public int beatsHit = 0;
+    public int beatsMissed = 0;
+
 
     void Start()
     {
@@ -35,12 +40,16 @@ public class clicker : MonoBehaviour
                 clicked.GetComponent<SpriteRenderer>().enabled = false;
                 clicked.GetComponent<BoxCollider2D>().enabled = false;
                 gameplayManager.BeatsLeft--;
+                beatsHit++;
+                hitText.text = (beatsHit.ToString() + "/" + beatsMissed.ToString());
             }
             else if(Input.GetKeyDown(KeyCode.Space))
             {
                 //test score code
                 testScore--;
+                beatsMissed++;
                 scoreText.text = "Score " + testScore;
+                hitText.text = (beatsHit.ToString() + "/" + beatsMissed.ToString());
                 print("Miss");
             }
 

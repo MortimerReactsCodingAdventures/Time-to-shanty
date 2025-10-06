@@ -17,19 +17,32 @@ public class GameplayManager : MonoBehaviour
     public GameObject Beatmap;
 
     public int BeatsLeft;
+    public bool gameStarted;
 
     public bool playMusic = false;
 
-    private void Start()
-    {
-        FindAllBeats();
-    }
     private void Update()
     {
         TimerCheck();
+        FinishCheck();
     }
 
+    void FinishCheck()
+    {
+        if (gameStarted && BeatsLeft <= 0)
+        {
+            //Show Results screen
 
+            /*results screen will need:
+            #Beats hit
+            #Beats missed
+            #hit Percentage
+            #different text based on hit percentage
+            #return to menu button
+            */
+
+        }
+    }
     public void TimerCheck()
         //This is a timer to start the game. it displays the time on the screen
     {
@@ -46,7 +59,7 @@ public class GameplayManager : MonoBehaviour
             timerText.GetComponent<TextMeshProUGUI>().text = "Go!";
             //im looking for a good font to put for the numbers and text
         }
-        else
+        else if(gameStarted == false)
         {
             StartGame();
         }
@@ -54,10 +67,11 @@ public class GameplayManager : MonoBehaviour
 
     public void StartGame()
     {
+        gameStarted = true;
         timerText.SetActive(false);
         Beatmap.SetActive(true);
+        FindAllBeats();
         playMusic = true;
-        //begin music (Marks problem)
     }
 
     //finds the total amount of beats so I can show the results when all beats have been hit

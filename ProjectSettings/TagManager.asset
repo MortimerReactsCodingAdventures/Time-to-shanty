@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Clickable
   - CLicker
+  - KillBeat
+  - GameplayManager
   layers:
   - Default
   - TransparentFX
