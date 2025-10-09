@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-
+        //changes to the game scene when the method play gets called
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }

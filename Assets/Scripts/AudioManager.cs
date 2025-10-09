@@ -64,6 +64,8 @@ public class AudioManager : MonoBehaviour
         //This plays audio for the game
         if (currentScene.name == "Gameplay development" && musicPlaying)
         {
+            musicSource.Stop();
+
             gameplayManager = GameObject.FindAnyObjectByType<GameplayManager>();
 
             //checks against my gameplay manager script to see if the countdown is finished
