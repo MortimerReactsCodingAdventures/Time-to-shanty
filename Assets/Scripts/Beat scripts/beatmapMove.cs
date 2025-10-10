@@ -4,10 +4,12 @@ using UnityEngine;
 public class beatmapMove : MonoBehaviour
 {
     GameplayManager gameplayManager;
+    clicker clicker;
 
     private void Start()
     {
         gameplayManager = GameObject.FindGameObjectWithTag("GameplayManager").GetComponent<GameplayManager>();
+        clicker = GameObject.FindGameObjectWithTag("CLicker").GetComponent<clicker>();
     }
     void Update()
     {
@@ -19,7 +21,9 @@ public class beatmapMove : MonoBehaviour
         print(collision);
         if (collision.gameObject.tag == "KillBeat")
         {
+            clicker.beatsMissed++;
             gameplayManager.BeatsLeft--;
+            clicker.hitText.text = (clicker.beatsHit.ToString() + "/" + clicker.beatsMissed.ToString());
             GameObject.Destroy(gameObject);
         }
     }

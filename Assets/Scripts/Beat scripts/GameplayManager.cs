@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class GameplayManager : MonoBehaviour
     float timer = 3.5f;
     public GameObject timerText;
     public GameObject Beatmap;
+    public GameObject results;
+
 
     public int BeatsLeft;
     public bool gameStarted;
@@ -31,6 +34,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (gameStarted && BeatsLeft <= 0)
         {
+            results.SetActive(true);
             //Show Results screen
 
             /*results screen will need:
@@ -85,6 +89,10 @@ public class GameplayManager : MonoBehaviour
     }
 
 
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
     void SongComplete()
     {
