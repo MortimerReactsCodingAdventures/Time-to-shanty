@@ -61,11 +61,31 @@ public class AudioManager : MonoBehaviour
             musicPlaying = true;
         }
 
-        //This plays audio for the game
-        if (currentScene.name == "Gameplay development" && musicPlaying)
+        //This plays audio for first scene/game
+        if (currentScene.name == "Gameplay development" && musicPlaying) 
         {
             musicSource.Stop();
+            Song();
+            gameplayManager = GameObject.FindAnyObjectByType<GameplayManager>();
 
+            //checks against my gameplay manager script to see if the countdown is finished
+
+            if (gameplayManager != null)
+            {
+                if (gameplayManager.playMusic == true)
+                {
+                    gameMusic();
+                    Debug.Log("work");
+                    musicSource.Play();
+                    musicPlaying = false;
+                }
+            }
+
+        }
+        if (currentScene.name == "Gameplay development 1" && musicPlaying)
+        {
+            musicSource.Stop();
+            Song1();
             gameplayManager = GameObject.FindAnyObjectByType<GameplayManager>();
 
             //checks against my gameplay manager script to see if the countdown is finished

@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SHANTY ON THE SEA
+  m_text: TUTORIAL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 44beafd19a071694a9b1e8efdce24130, type: 2}
   m_sharedMaterial: {fileID: 7388534225731830435, guid: 44beafd19a071694a9b1e8efdce24130, type: 2}
@@ -2002,6 +2002,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1223854837}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: scene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &486165269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2441,7 +2453,7 @@ MonoBehaviour:
   playSource: {fileID: 1286082759}
   menu: {fileID: 8300000, guid: 35aa27b2f4c214c4782e6024c6322717, type: 3}
   game: {fileID: 8300000, guid: a9a3e88144cb38a4aaedef920e94a94f, type: 3}
-  game1: {fileID: 8300000, guid: 8b2c7df6d1d272a49a5dfb896168c8ac, type: 3}
+  game1: {fileID: 8300000, guid: 72b1e79ef2ba14447847bfadacb58f15, type: 3}
   game2: {fileID: 8300000, guid: 8b2c7df6d1d272a49a5dfb896168c8ac, type: 3}
   Button: {fileID: 0}
   gameT: 0
@@ -2946,7 +2958,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SHANTY ON THE SEA
+  m_text: TUTORIAL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 44beafd19a071694a9b1e8efdce24130, type: 2}
   m_sharedMaterial: {fileID: 7388534225731830435, guid: 44beafd19a071694a9b1e8efdce24130, type: 2}
@@ -3268,9 +3280,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SHANTYLES
-
-'
+  m_text: LEAVE HER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 44beafd19a071694a9b1e8efdce24130, type: 2}
   m_sharedMaterial: {fileID: 7388534225731830435, guid: 44beafd19a071694a9b1e8efdce24130, type: 2}
@@ -3677,7 +3687,7 @@ GameObject:
   - component: {fileID: 1080792089}
   - component: {fileID: 1080792088}
   m_Layer: 5
-  m_Name: shantyless
+  m_Name: Leaver Her
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3722,9 +3732,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SHANTYLES
-
-'
+  m_text: LEAVE HER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 44beafd19a071694a9b1e8efdce24130, type: 2}
   m_sharedMaterial: {fileID: 7388534225731830435, guid: 44beafd19a071694a9b1e8efdce24130, type: 2}
@@ -4044,6 +4052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc4d6e4bcf08324f9201f2eddf5a559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
+  map: 0
+  map1: 0
+  map2: 0
 --- !u!1 &1224485876
 GameObject:
   m_ObjectHideFlags: 0
@@ -5949,6 +5960,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1223854837}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: scene1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1948808734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6143,7 +6166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2017325930
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6247,6 +6270,18 @@ MonoBehaviour:
       - m_Target: {fileID: 653208968}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: Song2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1223854837}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: scene2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
